@@ -5,7 +5,7 @@ function NotFound(){
     <div className="container">
       <h1>Error 404. Page not found</h1>
       <p>
-        <Link to={'/main'}>Go to main page</Link>
+        <Link to={'/'}>Go to main page</Link>
       </p>
     </div>
   )
