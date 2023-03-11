@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "vector",
+    "title": "UX/UI Design",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis excepturi, repellat esse laborum explicabo quia."
+  },
+  {
+    "icon": "filter",
+    "title": "Web Development",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis excepturi, repellat esse laborum explicabo quia."
+  },
+  {
+    "icon": "mobile",
+    "title": "App Design",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis excepturi, repellat esse laborum explicabo quia."
+  }
+]
