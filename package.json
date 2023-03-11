@@ -1,7 +1,7 @@
 {
   "name": "creative",
   "version": "0.1.0",
-  "homepage": "https://github.com/akovalenko777/creative",
+  "homepage": "https://akovalenko777.github.io/creative/",
   "private": true,
   "dependencies": {
     "@react-three/drei": "^9.56.27",
