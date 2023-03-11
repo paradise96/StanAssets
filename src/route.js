@@ -4,12 +4,13 @@ import Main from "./pages/Main";
 import About from './pages/About';
 import Blog from "./pages/Blog";
 import Contacts from "./pages/Contacts";
-import NotFound from "./pages/NotFound";
+// import NotFound from "./pages/NotFound";
 import { devHome, prodHome } from "./config";
 
 const router = createHashRouter([
   {
-    path: window.location.hostname === 'localhost' ? devHome : prodHome,
+    // path: window.location.hostname === 'localhost' ? devHome : prodHome,
+    path: '/',
     element: <App />,
     children: [
       {
