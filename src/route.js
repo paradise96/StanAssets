@@ -5,10 +5,11 @@ import About from './pages/About';
 import Blog from "./pages/Blog";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
+import { devHome, prodHome } from "./config";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: window.location.hostname === 'localhost' ? devHome : prodHome,
     element: <App />,
     children: [
       {
