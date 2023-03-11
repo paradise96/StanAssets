@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import App from './App';
 import Main from "./pages/Main";
 import About from './pages/About';
@@ -7,7 +7,7 @@ import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
 import { devHome, prodHome } from "./config";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: window.location.hostname === 'localhost' ? devHome : prodHome,
     element: <App />,
