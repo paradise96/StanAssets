@@ -38,7 +38,7 @@ function Blog(){
     console.log("CALL: fetchBlogData")
     const offset = (page - 1) * limit;
 
-    axios.get(`http://api.mediastack.com/v1/news?access_key=${NEWS_API_KEY}&limit=${limit}&offset=${offset}&categories=technology&languages=en`)
+    axios.get(`https://api.mediastack.com/v1/news?access_key=${NEWS_API_KEY}&limit=${limit}&offset=${offset}&categories=technology&languages=en`)
     .then((resp)=>{
       setNewsList(resp.data.data);
       setTotal(Math.ceil(resp.data.pagination.total/limit));
