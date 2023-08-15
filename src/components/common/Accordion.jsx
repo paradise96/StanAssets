@@ -1,10 +1,13 @@
 import data from '../../data/AccordeonInfo.json';
 import { useState } from 'react';
-function Accordion(){
+function Accordion() {
+    
     const [isActive, setActive] = useState([]);
+
     const handleClick = (index) => ()=>{
        setActive(prev => isActive.includes(index) ? prev.filter(item => item !== index) : [...prev, index]);
     }
+    
     return(
         <section className="accordion">
             <h2 className='headers'>FAQ'S</h2>

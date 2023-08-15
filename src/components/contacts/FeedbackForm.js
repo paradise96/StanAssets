@@ -6,7 +6,6 @@ import TextInput from "../form_elements/TextInput";
 
 
 function FeedbackForm() {
-  // const [phone, setPhone] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -38,8 +37,6 @@ function FeedbackForm() {
           parse_mode: 'HTML'
         })
         .then(resp=>{
-          
-          //setPhone('');
           setName('');
           setEmail('');
           setMessage('');
