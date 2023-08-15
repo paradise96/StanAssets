@@ -1,0 +1,147 @@
+.first_screen {
+    height: 930px;
+    width: 100%;
+    .container {
+        padding-top: 230px;
+    }
+    &_slider
+    {
+        background: url(../../img/firstscr.png) center center/cover no-repeat;
+        width: 100%;
+        height: 930px;
+    }
+    
+    &_second {
+        background: url(../../img/SecondScreen.png) center center/cover no-repeat;
+        width: 100%;
+        height: 930px;
+    }
+    &_third {
+        background: url(../../img/ThirdScreen.png) center center/cover no-repeat;
+        width: 100%;
+        height: 930px;
+    }
+    &_header {
+        max-width: 650px;
+        width: 100%;
+        font-family: 'Harabara';
+        font-weight: 700;
+        @include fz(44);
+        line-height: 60px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 16px;
+    }
+    &_text {
+        max-width: 650px;
+        width: 100%;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: #FFFFFF;
+        margin-bottom: 40px;
+    }
+    &_buttons {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+    .slick-dots {
+        display: flex !important;
+        align-items: center;
+        gap: 10px;
+        left: 50%;
+        bottom: 300px;
+        width: 90%;
+        max-width: 1360px;
+        transform: translateX(-50%);
+    }
+    .slick-dots li button:before{
+        content: '';
+        width: 20px;
+        height: 20px;
+        border: 3px solid $white;
+        border-radius: 50%;
+        opacity: 1;
+    }
+    .slick-dots li.slick-active button:before {
+        background: $white;
+        opacity: 1;
+    }
+    .small {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1050px){
+    .first_screen {
+        height: 630px;
+        width: 100%;
+        .container {
+            padding-top: 120px;
+        }
+        &_slider
+        {
+            height: 630px;
+        }
+        
+        &_second {
+            height: 630px;
+        }
+        &_third {
+            height: 630px;
+        }
+        .slick-dots {
+         display: none !important;
+        }
+    }
+    
+}
+
+
+@media screen and (max-width: 650px){
+    .first_screen {
+        height: 630px;
+        width: 100%;
+        .container {
+            padding-top: 120px;
+        }
+        &_slider
+        {
+            height: 430px;
+        }
+        
+        &_second {
+            height: 430px;
+        }
+        &_third {
+            height: 430px;
+        }
+        &_header {
+            text-align: center;
+            @include fz(24);
+            line-height: 38px;
+            width: 75%;
+            margin: 0 auto;
+        }
+        &_buttons {
+            margin: 36px 0 0 0;
+            justify-content: center;
+        }
+        .large {
+            display: none;
+        }
+        .small {
+            display: block;
+            color: $dark_black;
+            text-align: center;
+            margin: 15px 0 0 0;
+            max-width: 430px;
+            margin: 0 auto;
+        }
+    }
+    
+}

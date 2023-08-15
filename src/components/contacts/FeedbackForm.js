@@ -4,11 +4,13 @@ import axios from "axios";
 import { BOT_TOKEN, CHAT_ID } from "../../config";
 import TextInput from "../form_elements/TextInput";
 
-function FeedbackForm(){
+
+function FeedbackForm() {
   // const [phone, setPhone] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
 
   const handlerSubmit = (e)=>{
     e.preventDefault();
@@ -26,8 +28,8 @@ function FeedbackForm(){
 
     if(!errors.length){
       const text = `
-<b>Name:</b> ${name}
-<b>Email:</b> ${email}
+<b>Name:</b> ${name};
+<b>Email:</b> ${email};
 <b>Message:</b> ${message}`;
       axios
         .post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
@@ -54,37 +56,36 @@ function FeedbackForm(){
 
   return (
     <form onSubmit={handlerSubmit}>
-      {/* <TextInput
-        label="Phone"
-        value={phone}
-        required
-        setInputValue={(val)=>{
-          setPhone(val)
-        }} /> */}
-      <TextInput
-        label="Your Name"
-        value={name}
-        required
-        setInputValue={(val)=>{
-          setName(val)
-        }} />
-      <TextInput
-        label="Your Email"
-        value={email}
-        required
-        setInputValue={(val)=>{
-          setEmail(val)
-        }} />
-
-      <TextInput
-        label="Message"
-        value={message}
-        textarea
-        setInputValue={(val)=>{
-          setMessage(val)
-        }} />
-
-      <button type="submit" className="btn btn-primary btn-block btn-lg mt-3">Send Message</button>
+      <div className="contact_wrap">
+        <div className="phone">
+          <TextInput
+            label="Name"
+            value={name}
+            required
+            setInputValue={(val)=>{
+              setName(val)
+            }} />
+        </div>
+        <div>
+          <TextInput
+            label="Email"
+            value={email}
+            required
+            setInputValue={(val)=>{
+              setEmail(val)
+            }} />
+        </div>
+        <div>
+          <TextInput
+            label="Message"
+            value={message}
+            textarea
+            setInputValue={(val)=>{
+              setMessage(val)
+            }} />
+        </div>
+          <button type="submit" className="btn btn_green btn_form">Send Message</button>
+        </div>
     </form>
   )
 }

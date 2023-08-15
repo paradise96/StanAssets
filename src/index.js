@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider } from "react-router-dom";
 import router from './route';
 
-import './assets/scss/creative-studio.scss';
-import './assets/css/themify-icons.css';
-
-
+import './assets/scss/main_scss.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,0 +1,228 @@
+.nav {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(33, 33, 33, 0.3);
+    box-shadow: 0px 4px 12px rgba(24, 9, 96, 0.1);
+    z-index: 10000;
+    &_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // margin-top: 10px;
+    }
+    &_usual {
+        width: 207px;
+        height: 52px;
+        margin-top: 7px;
+    }
+    &_list {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 15px 0 0 0;
+    }
+    &_link {
+        position: relative;
+        a {
+            color: $white;
+            font-family: 'Montserrat';
+            font-weight: 700;
+            @include fz(16);
+            line-height: 36px;
+            text-transform: uppercase;
+            &:hover {
+                color: $header_hover;
+            }
+        }
+        &:hover {
+            .hovered {
+                color: $header_hover;
+            }
+            .nav_submenu {
+                display: block;
+            }
+        }
+    }
+ 
+    &_submenu {
+        display: none;
+        white-space: nowrap;
+        padding: 12px 10px 13px 16px;
+        position: absolute;
+        top: 35px;
+        left: 25px;
+        border-top: 3px solid $border_nav;
+        background: rgba(33, 33, 33, 0.8);
+        box-shadow: 2px 4px 16px rgba(158, 158, 158, 0.3);
+        border-radius: 0px 0px 10px 10px;
+    }
+    .arrow {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid $white;
+            border-left: 2px solid $white;
+            top: 10px;
+            right: -15px;
+            transform: rotate(-135deg);
+        }
+        &:hover::before {
+            top: 15px;
+            transform: rotate(-315deg);
+            border-top: 2px solid $header_hover;
+            border-left: 2px solid $header_hover;
+        }
+    }
+    .mrgt12 {
+        margin-top: 12px;
+    }
+    .mrgr16 {
+        margin: 0 16px 0 0;
+    }
+    .hidden {
+        display: none;
+    }
+   
+}
+.bg_black {
+    background-color: #212121;
+    box-shadow: 2px 4px 16px rgba(158, 158, 158, 0.3);
+}
+.unactive {
+    background-color: $white;
+    a {
+        color: $medium_text;
+        &:hover {
+            color: $border_nav;
+        }
+    }
+    .nav_wrapper {
+        margin-top: 7px;
+    }
+    .nav_usual {
+        display: none;
+    }
+    .hidden {
+        display: block;
+    }
+    .nav_submenu {
+        background-color: $white;
+    }
+    .arrow {
+        &::before {
+            border-top: 2px solid $medium_text;
+            border-left: 2px solid $medium_text;
+        }
+    }
+    .btn {
+        border: 2px solid $green_btn;
+        color: $green_btn;
+        font-family: Montserrat;
+        @include fz(16);
+        font-weight: 700;
+        line-height: 36px;
+        text-transform: uppercase;
+    }
+    .burger {
+        background-color: $medium_text;
+    }
+       
+}
+.hamburger{
+    display: none;
+    width: 1.625rem;
+    height: 1.25rem;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    gap: 5px;
+
+}
+
+.burger{
+    width: 27px;
+    height: 0.25rem;
+    border-radius: 10px;
+    background-color: $white;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+    margin: 0 0 5px 0;
+}
+.burger1{
+    transform: rotate(45deg);
+
+}
+.burger2{
+    transform:translateX(100%);
+    opacity:0;
+}
+.burger3{
+    transform: rotate(-45deg);
+}  
+
+@media screen and (max-width: 1300px){
+    .smooth {
+        display: none;
+    }
+    .btn_navigation {
+        display: none;
+    }
+    .nav_list {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+        margin: 23px 0 0 0;
+    }
+    .nav_ham {
+        display: block;
+        width: 70dvw;
+        height: 100dvh;
+        background-color: $white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        box-shadow: 2px 4px 16px rgba(158, 158, 158, 0.3);
+        padding: 2vw 0 0 5vw;
+        .nav_submenu {
+            display: block;
+            position: static;
+            background-color: $white;
+            border: none;
+            box-shadow: none;
+            padding: 0 0 0 1vw;
+        }
+        a {
+            color: $medium_text;
+            &:hover {
+                color: $border_nav;
+            }
+        }
+    }
+    .arrow::before {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 550px){
+    .nav_ham {
+        width: 83vw;
+    }
+    .nav_submenu {
+        white-space: wrap;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .nav_ham {
+        a {
+            @include fz(14);
+        }
+    }
+}

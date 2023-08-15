@@ -1,66 +1,75 @@
-import './../assets/scss/Blog.scss';
-import BlockTitle from '../components/common/BlockTitle';
 import { useState, useEffect } from 'react';
-import { NEWS_API_KEY } from '../config';
 import axios from 'axios';
-import BlogItem from '../components/blog/BlogItem';
-import { toast } from '../helpers';
-import Pagination from '../components/common/Pagination';
+
+
 
 function Blog(){
-  const [newsList, setNewsList] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [gamesList, setGamesList] = useState([]);
   const [page, setPage] = useState(1);
 
-  const limit = 12;
+  const ITEMS_PER_PAGE = 10;
+  const AMOUNT_OF_PAGES = gamesList.length/ITEMS_PER_PAGE;
 
-  console.log(total);
 
-  useEffect(()=>{
-    fetchBlogData();
-  }, [page]);
 
-  const handlerPrevPage = ()=>{
-    if(page===1){
-      return false
-    }
-    setPage(page-1);
+  const prevHandler = () =>{
+    setPage(1 < page ? page-1 : page);
   }
 
-  const handlerNextPage = ()=>{
-    if(page===total){
-      return false
-    }
-    setPage(page+1);
+  const nextHandler = () =>{
+    setPage(AMOUNT_OF_PAGES > page ? page+1 : page);
   }
 
-  const fetchBlogData = ()=>{
-    console.log("CALL: fetchBlogData")
-    const offset = (page - 1) * limit;
+  const goToPageHandler = (num) => () => {
+    setPage(num)
+  }
 
-    axios.get(`https://api.mediastack.com/v1/news?access_key=${NEWS_API_KEY}&limit=${limit}&offset=${offset}&categories=technology&languages=en`)
+  const fetchData = ()=> {
+    axios
+    .get(`https://paradise96.github.io/gamesAPI/blogAPI.json`)
     .then((resp)=>{
-      setNewsList(resp.data.data);
-      setTotal(Math.ceil(resp.data.pagination.total/limit));
-    })
-    .catch((resp)=>{
-      toast.danger(resp.data.error.message);
+      setGamesList(resp.data.data);
     })
   }
+    useEffect(()=>{
+      fetchData();
+    }, []);
 
-  return (
-    <div className="blog-page">
-      <section>
-        <div className="container">
-          <BlockTitle title="News Feeds" subtitle="Our Blog" center />
-          <div className="items-wrap">
-            {newsList.map((itemNews, index)=> <BlogItem key={index} item={itemNews} />)}
+    return( 
+      <section className='blog'>
+        <div className='container'>
+          <h2 className='headers mrg_15'>BLOG</h2>
+          {gamesList.slice((page-1)*ITEMS_PER_PAGE, page*ITEMS_PER_PAGE).map((item, index)=>{
+            return(
+                <div className='blog_item' key={index}>
+                  <div className='blog_image'>
+                    <img src={item.img} alt="different games pictures"></img>
+                  </div>
+                  <div className='blog_text'>
+                    <h2>{item.header}</h2>
+                    <p>{item.description}</p>
+                    <h3>{item.date}</h3>
+                  </div>
+              </div>
+            )
+          })}
+          <div className='blog_pagination'> 
+              <button className='btn_prev' onClick={prevHandler}>prev</button>
+              <ul>
+              {Array.from(Array(AMOUNT_OF_PAGES).keys()).map((item, index) => {
+                const pageNumber = item + 1;
+                  return( 
+                  <li key={index} className={pageNumber === page ? '_active' : ''} onClick={goToPageHandler(item+1)}>{item+1}</li>
+                  )
+                })}
+              </ul>
+              <button className='btn_next' onClick={nextHandler}>next</button>
           </div>
-          <Pagination total={total} page={page} gotoHandler={(newPage)=>{setPage(newPage)}} />
+          
         </div>
       </section>
-    </div>
-  )
+    )
 }
 
 export default Blog
+

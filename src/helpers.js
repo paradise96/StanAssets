@@ -8,16 +8,20 @@ export const toast = {
   style: {
     wrapper: {
       position: 'fixed',
-      left: '20px',
-      top: '20px',
-      width: '350px',
+      left: '40%',
+      top: '100px',
+      width: '400px',
       zIndex: '10000',
     },
     toast: {
       padding: '15px',
       color: '#fff',
       borderRadius: '5px',
-      marginBottom: '10px'
+      marginBottom: '10px',
+      fontFamily: 'Montserrat',
+      fontWeight: 700,
+      fontSize: '16px',
+      textAlign: 'center',
     }
   },
   show: function(text, type){

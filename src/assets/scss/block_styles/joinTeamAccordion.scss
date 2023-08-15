@@ -1,0 +1,85 @@
+.joint {
+    &_item{
+        // padding: 29px 29px 29px 80px;
+        width: 90%;
+        box-shadow: 0px 3px 16px 2px rgba(29, 51, 107, 0.15);
+        background: $white;
+        border-radius: 16px;
+        margin: 40px 0 20px 0;
+    }
+    &_header, &_subheader  {
+        color: $medium_text;
+        font-family: Harabara;
+        font-weight: 700;
+        line-height: 38px;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+    }
+    &_header{
+        @include fz(24);
+        padding: 29px 29px 29px 80px;
+    }
+    &_subheader {
+        @include fz(20);
+        margin: 16px 0 0 0;
+    }
+    &_info {
+        margin: 5px 0 0 0;
+        padding: 9px 29px 29px 80px;
+    }
+    &_list {
+        li {
+            color: $dark_black;
+            font-family: Montserrat;
+            @include fz(16);
+            font-weight: 400;
+            line-height: 26px;
+            position: relative;
+            margin: 4px 0 4px 20px;
+            &::after{
+                content: '';
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: $medium_blue;
+                top: 9px;
+                left: -12px;
+    
+            }
+        }
+      
+    }
+    &_closed {
+        display: none;
+    }
+    .border {
+        border-bottom: 1px solid rgba(25, 68, 132, .2);
+        width: 100%;
+    }
+   
+}
+.arrow_upp, .arrow_below {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+    }
+    }
+.arrow_upp::before {
+    transform: rotate(135deg);
+    border-top: 3px solid $medium_text;
+    border-right: 3px solid $medium_text;
+    left: 55px;
+    top: 35px;
+    z-index: 10;
+}
+.arrow_below::before {
+    border-top: 3px solid $medium_text;
+    border-right: 3px solid $medium_text;
+    transform: rotate(315deg);
+    left: 55px;
+    top: 42px;
+}

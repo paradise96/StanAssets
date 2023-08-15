@@ -31,8 +31,7 @@ function TextInput(props){
         value={currentValue} 
         id={ attrId } 
         cols="30" 
-        rows="7" 
-        className="form-control form-control-lg" 
+        rows="7"
         placeholder=" "
         onChange={(e)=>{setValue(e.target.value)}}
         onBlur={checkValue}
@@ -50,9 +49,9 @@ function TextInput(props){
       />
 
   return (
-      <div className={`form-group${hasError ? ' has-error' : ''}`}>
+      <div className={`did-floating-input form-group${hasError ? ' has-error' : ''}`}>
           { element }
-          <label className={`form-label${reqClass}`} htmlFor={ attrId }>{ label }</label>
+          <label className={`did-floating-label form-label${reqClass}`} htmlFor={ attrId }>{ label }</label>
       </div>
   )
 }

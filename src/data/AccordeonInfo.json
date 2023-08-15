@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What is responsive web design?",
+        "answer": " Responsive web design is an approach that ensures websites adapt and display optimally across various devices, such as desktops, tablets, and smartphones, providing a seamless user experience."
+    },
+    {
+        "question": "What are the benefits of using CSS preprocessors?",
+        "answer": "CSS preprocessors, like Sass or Less, offer advantages such as variables, nesting, and mixins, which enhance code maintainability, reusability, and make CSS development more efficient."
+    },
+    {
+        "question": "What is the purpose of using frameworks in web development?",
+        "answer": "Web development frameworks provide a structured set of tools and libraries that simplify and expedite the development process by offering pre-written code and standardized practices."
+    },
+    {
+        "question": "How does caching improve website performance?",
+        "answer": "Caching stores static website assets on a user's device or on intermediate servers, reducing the need to fetch resources from the web server, resulting in faster page loading and improved performance."
+    },
+    {
+        "question": "What is the role of version control systems in web development?",
+        "answer": "Version control systems, such as Git, help track changes made to code, facilitate collaboration among developers, and provide the ability to revert to previous versions of the codebase if needed."
+    }
+]

@@ -1,0 +1,53 @@
+.front {
+    padding: 100px 0 0 0;
+    &_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_header {
+        max-width: 550px;
+        width: 100%;
+        color: $bark_blue;
+        font-family: 'Harabara';
+        font-weight: 700;
+        @include fz(44);
+        line-height: 60px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+    &_picture {
+        max-height: 500px;
+        img {
+            max-height: 500px;
+        }
+    }
+    span {
+        color: $medium_blue;
+    }
+    .team_wide {
+        max-width: 700px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .front {
+        &_wrapper {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &_header {
+            @include fz(24);
+            line-height: 38px;
+            text-align: center;
+        }
+        &_picture {
+            max-height: 205px;
+            img {
+                max-height: 205px;
+            }
+        }
+    }
+}
