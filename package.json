@@ -1,7 +1,7 @@
 {
   "name": "creative",
   "version": "0.1.0",
-  "homepage": "https://gaga.github.io/creative/",
+  "homepage": "https://paradise96.github.io/StanAssets",
   "private": true,
   "dependencies": {
     "@react-three/drei": "^9.56.27",

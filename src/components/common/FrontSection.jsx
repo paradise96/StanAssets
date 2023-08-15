@@ -1,5 +1,6 @@
 function FrontSection(props){
-    const {header, url, alt} = props;
+    const { header, url, alt } = props;
+    
     return (
         <section className="front">
             <div className="container">

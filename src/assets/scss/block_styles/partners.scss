@@ -109,14 +109,9 @@
         &::before, &::after {
             display: none;
         }
-    }
-}
-
-
-@media screen and (max-width: 600px){
-    .partners {
-        padding: 100px 0 70px 0;
         &_grid {
+            justify-content: center;
+            align-items: center;
             grid-template-columns: repeat(2, 146px);
         }
         &_item {
@@ -127,5 +122,16 @@
                 max-height: 71px;
             }
         }
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .partners {
+        padding: 100px 0 70px 0;
+        &_grid {
+            grid-template-columns: repeat(2, 146px);
+        }
+       
     }
 }

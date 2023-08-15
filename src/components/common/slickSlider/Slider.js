@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+
 function SlickSlider(props) {
   const { dots, slidesToShow, responsive, arrows, children } = props;
   const settings = {
