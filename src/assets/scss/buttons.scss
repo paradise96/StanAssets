@@ -61,19 +61,12 @@
         font-weight: 700;
         @include fz(16);
         line-height: 36px;
+        text-transform: uppercase;
         color: $green_btn;
-        a {
-            font-family: 'Montserrat';
-            font-weight: 700;
-            @include fz(16);
-            line-height: 36px;
-            color: $green_btn;
-        }
+        transition: all .7s ease;
         &:hover {
             background: $green_btn;
-            a {
-                color: $white;
-            }
+            color: $white;
         }
     }
     &_form {

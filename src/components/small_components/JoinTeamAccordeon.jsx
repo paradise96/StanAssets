@@ -2,12 +2,12 @@ import { useState } from "react";
 import { infoJoinAccordeon } from "../../data/JoinTeamInfoApply";
 
 function JoinAccordeon() {
-    const [openedIndex, setOpenedIndex] = useState(null);
+    const [openedIndex, setOpenedIndex] = useState([]);
 
-    const handleOpenAccordeon = (index) => {
-        setOpenedIndex(openedIndex === index ? null : index);
+    const handleClick = (index) => ()=>{
+        setOpenedIndex(prev => openedIndex.includes(index) ? prev.filter(item => item !== index) : [...prev, index]);
     }
-
+    
     return (
         <section className="joint">
             <div className="container">
@@ -16,10 +16,10 @@ function JoinAccordeon() {
                     {infoJoinAccordeon.map((item, index) => {
                         return (
                             <div className={`joint_item`} key={index}>
-                                <h2 className={`joint_header ${openedIndex !== null ? 'border arrow_below' : 'arrow_upp'}`} onClick={() => handleOpenAccordeon(index)}>
+                                <h2 className={`joint_header ${openedIndex.includes(index) ? 'border arrow_below' : 'arrow_upp'}`} onClick={handleClick(index)}>
                                     {item.header}
                                 </h2>
-                                <div className={`joint_info ${openedIndex === index ? 'joint_opened' : 'joint_closed'}`}>
+                                {openedIndex.includes(index) && <div className={`joint_info ${openedIndex.includes(index) ? 'joint_opened' : 'joint_closed'}`}>
                                     {item.infoToApply.map((subItem, subIndex) => {
                                         return (
                                             <div className="" key={subIndex}>
@@ -32,7 +32,7 @@ function JoinAccordeon() {
                                             </div>
                                         );
                                     })}
-                                </div>
+                                </div>}
                             </div>
                         );
                     })}

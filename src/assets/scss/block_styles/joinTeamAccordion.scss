@@ -18,6 +18,7 @@
     &_header{
         @include fz(24);
         padding: 29px 29px 29px 80px;
+        z-index: 400;
     }
     &_subheader {
         @include fz(20);
