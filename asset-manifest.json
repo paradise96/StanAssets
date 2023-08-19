@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/StanAssets/static/css/main.04061195.css",
-    "main.js": "/StanAssets/static/js/main.5a90d723.js",
+    "main.css": "/StanAssets/static/css/main.26653a4c.css",
+    "main.js": "/StanAssets/static/js/main.20453d68.js",
     "static/media/dev3-min.png": "/StanAssets/static/media/dev3-min.4a0294604647a71a4968.png",
     "static/media/dev4-min.png": "/StanAssets/static/media/dev4-min.c6c16cd9d78a01666596.png",
     "static/media/firstscr.png": "/StanAssets/static/media/firstscr.0a991b47b94e21ffc4dd.png",
@@ -92,11 +92,11 @@
     "static/media/contactLLetter.svg": "/StanAssets/static/media/contactLLetter.8877ab638b420c7809dd5385440949eb.svg",
     "static/media/ContactLetter.svg": "/StanAssets/static/media/ContactLetter.9ab8b5e2fa62d4fa498b.svg",
     "static/media/starGreen.svg": "/StanAssets/static/media/starGreen.2ec0a304bad28ffb1961a0272c5882d8.svg",
-    "main.04061195.css.map": "/StanAssets/static/css/main.04061195.css.map",
-    "main.5a90d723.js.map": "/StanAssets/static/js/main.5a90d723.js.map"
+    "main.26653a4c.css.map": "/StanAssets/static/css/main.26653a4c.css.map",
+    "main.20453d68.js.map": "/StanAssets/static/js/main.20453d68.js.map"
   },
   "entrypoints": [
-    "static/css/main.04061195.css",
-    "static/js/main.5a90d723.js"
+    "static/css/main.26653a4c.css",
+    "static/js/main.20453d68.js"
   ]
 }
